@@ -1,0 +1,48 @@
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    // Check user input if non negative
+        float money = -1;
+
+        while(money < 0)
+        {
+            money = get_float("How much change do you need to give? ");
+        }
+
+    money = money * 100;
+
+    // determine number of quarters
+
+        float quarters = money / 25;
+
+        money = money - ((int) quarters * 25);
+
+    // determine number of dimes
+
+        float dimes = money / 10;
+
+        money = money - ((int) dimes * 10);
+
+    // determine number of nickels
+
+        float nickels = money / 05;
+
+        money = money - ((int) nickels * 05);
+
+    // determine number of pennies
+
+        float pennies = money / 01;
+
+        money = money - ((int) pennies * 01);
+
+    // print change breakdown
+
+        printf("No. of quarters to give: %i \n", (int) quarters);
+        printf("No. of dimes to give: %i \n", (int) dimes);
+        printf("No. of nickels to give: %i \n", (int) nickels);
+        printf("No. of pennies to give: %i \n", (int) pennies);
+
+
+}
